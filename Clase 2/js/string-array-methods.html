@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String/Array Methods</title>
+</head>
+<body>
+
+    <script>
+        var persona = {
+            nombre: 'Juan', //Propiedades o atributos
+            edad: 23,       //Propiedades o atributos
+            saludar: function() {   //Metodo
+                return 'Hola soy ' + this.nombre;
+            }
+        };
+        console.log(persona);
+
+        console.log(
+            'La persona se llama ' + persona.nombre + 'y tiene ' + persona.edad + 'años.' +
+            '\nSaluda de la siguiente forma: ' + persona.saludar()
+        );
+
+        // var saludo = 'Hola!';   //String en forma literal
+        var saludo = String('Hola!'); //String con constructor String
+        console.log(saludo);
+
+        //var persona = ['Juan', 'Perez', 23];    //Array en forma literal
+        var persona = Array('Juan', 'Perez', 23);   //Array con constructor Array
+
+        console.log('\n /* -------------------------- */');
+        console.log('\n /*        String Methods      */');
+        console.log('\n /* -------------------------- */');
+        // W3School o MDN para documentacion
+
+        //En general no modifican el string
+
+        console.log('/* Trim */');
+        var str = '                Hola            ';
+        console.log(str, str.length);
+        var strSinEspacios = str.trim();
+        console.log(strSinEspacios, strSinEspacios.length);
+
+        console.log('\n /* -------------------------- */');
+        console.log('\n /*         Array Methods      */');
+        console.log('\n /* -------------------------- */');
+        // W3School o MDN para documentacion
+
+        //En general modifican el array
+        console.log('/*   Push */');
+        var array = [1,2,3,4];
+        console.log(array);
+        array.push(5);
+        console.log(array);
+        array.push(6);
+        console.log(array);
+
+        console.log('/*   Unshift */');
+        var array = [1,2,3,4];
+        console.log(array);
+        array.unshift(5);
+        console.log(array);
+        array.unshift(6);
+        console.log(array);
+
+        console.log('/*   Pop */');
+        var array = [1,2,3,4];
+        console.log(array);
+        array.pop();
+        console.log(array);
+        array.pop();
+        console.log(array);
+
+        console.log('/*   Shift */');
+        var array = [1,2,3,4];
+        console.log(array);
+        array.shift();
+        console.log(array);
+        array.shift();
+        console.log(array);
+
+
+        console.log('\n /*  ------------------------------- */');
+        console.log('\n /*   String/Array Methods ejemplos  */');
+        console.log('\n /*  ------------------------------- */');
+
+        //Mostrar el mensaje al reves
+        var mensaje = 'Hola Mundo!';
+        console.log(mensaje);
+        var mensajeAlReves = mensaje.split('').reverse().join('');
+        console.log(mensajeAlReves);
+
+        var node = 'NODE';
+        console.log(node);
+        var deno = node.split('').sort().join('');
+        console.log(deno);
+
+    </script>
+
+</body>
+</html>
