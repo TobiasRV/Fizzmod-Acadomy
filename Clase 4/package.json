@@ -1,0 +1,14 @@
+{
+  "name": "clase-4",
+  "version": "0.0.1",
+  "description": "ECMAScript Conceptos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rodriguez Viau Tobias",
+  "license": "MIT",
+  "dependencies": {
+
+  }
+}
