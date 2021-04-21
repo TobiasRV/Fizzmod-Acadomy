@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Estricto en Objetos</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        //Objetos dinamico (puede sufrir modificaciones irrestrictas)
+        let objDinamico = { x:1 }
+        console.log(objDinamico, typeof objDinamico);
+        objDinamico.x = 10;
+        console.log(objDinamico, typeof objDinamico);
+
+        //Objetos estatico (no puede sufrir modificaciones irrestrictas, salvo autorizacion)
+        let objEstatico = Object.create(Object.prototype, {
+            x: {
+                value: 1,
+                // writable: true
+            }
+        });
+
+        console.log(objEstatico, typeof objEstatico);
+        objEstatico.x = 10;
+        console.log(objEstatico, typeof objEstatico);
+    </script>
+</body>
+</html>

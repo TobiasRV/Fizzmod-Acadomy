@@ -1,0 +1,23 @@
+extends layout
+
+block formulario
+    div(class="container mt-3")
+        div(class="jumbotron")
+            h1(style="color:blue;")="Ingrese datos"
+            br
+            form(action="/datos" method="post")
+                div(class="form-group")
+                    label(for="nombre")="Nombre"
+                    input(id="nombre" class="form-control" type="text" name="nombre")
+
+                div(class="form-group")
+                    label(for="apellido")="Apellido"
+                    input(id="apellido" class="form-control" type="text" name="apellido")
+
+                div(class="form-group")
+                    label(for="edad")="Edad"
+                    input(id="edad" class="form-control" type="number" name="edad")
+
+                button(class="btn btn-success mt-3 mb-5")="Enviar"
+            
+            include tabla.pug

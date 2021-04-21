@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML desde nodejs</title>
+    <style>
+        h1{ color: purple;  }
+        h2{ color: crimson; }
+        h3{ color: green;   }
+        h4{ color: orangered;}
+        p{  color: blue;    }
+    </style>
+    <script src="js/handlebars-v4.7.7.js"></script>
+</head>
+<body>
+    <div></div>
+    <script>
+        let xhr = new XMLHttpRequest;
+        xhr.open('get', 'plantilla.hbs');
+        xhr.addEventListener('load', () => {
+            if(xhr.status == 200){
+                let content = xhr.response;
+                console.log(content);
+
+                const template = Handlebars.compile(content);
+                document.querySelector('div').innerHTML = template({
+                    visitas: 1,
+                    fyh: new Date().toLocaleString(),
+                    timestamp: Date.now()
+                });
+            }
+        });
+        xhr.send();
+
+    //     const template = Handlebars.compile(`
+    // <h1>Titulo H1</h1>
+    // <h2>Contador visitas: {{visitas}}</h2>
+    // <h3>Fecha y Hora: {{fyh}}</h3>
+    // <h4>Timestamp: {{timestamp}}</h4>
+    // <p>lorem ipsum dolor sit amet, consectet</p>
+    // `);
+
+    // document.querySelector('div').innerHTML = template({
+    //     visitas: 1,
+    //     fyh: new Date().toLocaleString(),
+    //     timestamp: Date.now()
+    // });
+    </script>
+</body>
+</html>
